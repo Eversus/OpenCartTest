@@ -1,2 +1,2 @@
 # OpenCartTest
-Repository for test task on OS
+Repository for test task on OС
