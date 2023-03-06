@@ -1,0 +1,4 @@
+2023-03-06 18:33:07 - PHP Notice:  Undefined variable: category_id in /var/www/octest/data/www/octest.web-space.su/system/storage/modification/catalog/controller/product/product.php on line 418
+2023-03-06 18:34:16 - PHP Notice:  Undefined variable: category_id in /var/www/octest/data/www/octest.web-space.su/system/storage/modification/catalog/controller/product/product.php on line 418
+2023-03-06 18:34:20 - PHP Notice:  Undefined variable: category_id in /var/www/octest/data/www/octest.web-space.su/system/storage/modification/catalog/controller/product/product.php on line 418
+2023-03-06 18:34:32 - PHP Notice:  Undefined variable: category_id in /var/www/octest/data/www/octest.web-space.su/system/storage/modification/catalog/controller/product/product.php on line 418

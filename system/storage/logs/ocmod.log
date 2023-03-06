@@ -1,0 +1,2255 @@
+2023-03-06 17:31:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 17:31:45 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:03:00 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: Bulk specials editor + the countdown timer
+
+FILE: catalog/model/catalog/product.php
+CODE: getProduct($product_id) {
+LINE: 29
+CODE: pd.name AS name, p.image,
+LINE: 30
+CODE: $query->row['date_modified'],
+LINE: 82
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$product_info['special']) {
+LINE: 323
+
+FILE: catalog/controller/product/category.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 253
+CODE: $data['header']
+LINE: 457
+LINE: 527
+
+FILE: catalog/controller/product/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 23
+CODE: $price,
+LINE: 161
+CODE: $data['header']
+LINE: 353
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 88
+CODE: $price,
+LINE: 263
+CODE: $data['header']
+LINE: 83
+LINE: 472
+LINE: 533
+
+FILE: catalog/controller/product/search.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 276
+CODE: $data['header']
+LINE: 531
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 83
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+CODE: return $this->load->view(
+LINE: 119
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 109
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: if ((float)$result['special']) {
+LINE: 223
+CODE: if ((float)$result['special']) {
+LINE: 131
+CODE: if ((float)$result['special']) {
+LINE: 251
+CODE: if ((float)$result['special']) {
+LINE: 246
+CODE: if ((float)$result['special']) {
+LINE: 53
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$product_info['special']) {
+LINE: 60
+CODE: if ($timer_exist) {
+LINE: 228
+CODE: if ($timer_exist) {
+LINE: 136
+CODE: if ($timer_exist) {
+LINE: 251
+CODE: if ($timer_exist) {
+LINE: 256
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 58
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 65
+
+FILE: admin/model/catalog/product.php
+CODE: as $product_special) {
+LINE: 72
+LINE: 228
+CODE: date_start = '" . $this->db->escape($product_special['date_start']) . "',
+LINE: 73
+LINE: 229
+CODE: $sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+LINE: 402
+LINE: 686
+CODE: $sql .= " AND p.model LIKE '" . $this->db->escape($data['filter_model']) . "%'";
+LINE: 406
+LINE: 690
+
+FILE: admin/controller/catalog/product.php
+CODE: function getForm() {
+LINE: 608
+CODE: $this->language->get('entry_customer_group');
+LINE: 696
+CODE: $product_special['price'],
+LINE: 1320
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'catalog/recurring')) {
+LINE: 71
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:03:05 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: Bulk specials editor + the countdown timer
+
+FILE: catalog/model/catalog/product.php
+CODE: getProduct($product_id) {
+LINE: 29
+CODE: pd.name AS name, p.image,
+LINE: 30
+CODE: $query->row['date_modified'],
+LINE: 82
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$product_info['special']) {
+LINE: 323
+
+FILE: catalog/controller/product/category.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 253
+CODE: $data['header']
+LINE: 457
+LINE: 527
+
+FILE: catalog/controller/product/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 23
+CODE: $price,
+LINE: 161
+CODE: $data['header']
+LINE: 353
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 88
+CODE: $price,
+LINE: 263
+CODE: $data['header']
+LINE: 83
+LINE: 472
+LINE: 533
+
+FILE: catalog/controller/product/search.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 276
+CODE: $data['header']
+LINE: 531
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 83
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+CODE: return $this->load->view(
+LINE: 119
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 109
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: if ((float)$result['special']) {
+LINE: 223
+CODE: if ((float)$result['special']) {
+LINE: 131
+CODE: if ((float)$result['special']) {
+LINE: 251
+CODE: if ((float)$result['special']) {
+LINE: 246
+CODE: if ((float)$result['special']) {
+LINE: 53
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$product_info['special']) {
+LINE: 60
+CODE: if ($timer_exist) {
+LINE: 228
+CODE: if ($timer_exist) {
+LINE: 136
+CODE: if ($timer_exist) {
+LINE: 251
+CODE: if ($timer_exist) {
+LINE: 256
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 58
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 65
+
+FILE: admin/model/catalog/product.php
+CODE: as $product_special) {
+LINE: 72
+LINE: 228
+CODE: date_start = '" . $this->db->escape($product_special['date_start']) . "',
+LINE: 73
+LINE: 229
+CODE: $sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+LINE: 402
+LINE: 686
+CODE: $sql .= " AND p.model LIKE '" . $this->db->escape($data['filter_model']) . "%'";
+LINE: 406
+LINE: 690
+
+FILE: admin/controller/catalog/product.php
+CODE: function getForm() {
+LINE: 608
+CODE: $this->language->get('entry_customer_group');
+LINE: 696
+CODE: $product_special['price'],
+LINE: 1320
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'catalog/recurring')) {
+LINE: 71
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:04:40 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:05:34 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: Bulk specials editor + the countdown timer
+
+FILE: catalog/model/catalog/product.php
+CODE: getProduct($product_id) {
+LINE: 29
+CODE: pd.name AS name, p.image,
+LINE: 30
+CODE: $query->row['date_modified'],
+LINE: 82
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$product_info['special']) {
+LINE: 323
+
+FILE: catalog/controller/product/category.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 253
+CODE: $data['header']
+LINE: 457
+LINE: 527
+
+FILE: catalog/controller/product/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 23
+CODE: $price,
+LINE: 161
+CODE: $data['header']
+LINE: 353
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 88
+CODE: $price,
+LINE: 263
+CODE: $data['header']
+LINE: 83
+LINE: 472
+LINE: 533
+
+FILE: catalog/controller/product/search.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 276
+CODE: $data['header']
+LINE: 531
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 83
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+CODE: return $this->load->view(
+LINE: 119
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 109
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: if ((float)$result['special']) {
+LINE: 223
+CODE: if ((float)$result['special']) {
+LINE: 131
+CODE: if ((float)$result['special']) {
+LINE: 251
+CODE: if ((float)$result['special']) {
+LINE: 246
+CODE: if ((float)$result['special']) {
+LINE: 53
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$product_info['special']) {
+LINE: 60
+CODE: if ($timer_exist) {
+LINE: 228
+CODE: if ($timer_exist) {
+LINE: 136
+CODE: if ($timer_exist) {
+LINE: 251
+CODE: if ($timer_exist) {
+LINE: 256
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 58
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 65
+
+FILE: admin/model/catalog/product.php
+CODE: as $product_special) {
+LINE: 72
+LINE: 228
+CODE: date_start = '" . $this->db->escape($product_special['date_start']) . "',
+LINE: 73
+LINE: 229
+CODE: $sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+LINE: 402
+LINE: 686
+CODE: $sql .= " AND p.model LIKE '" . $this->db->escape($data['filter_model']) . "%'";
+LINE: 406
+LINE: 690
+
+FILE: admin/controller/catalog/product.php
+CODE: function getForm() {
+LINE: 608
+CODE: $this->language->get('entry_customer_group');
+LINE: 696
+CODE: $product_special['price'],
+LINE: 1320
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'catalog/recurring')) {
+LINE: 71
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:06:11 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:16:29 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: Days and hours in specials
+
+FILE: catalog/model/catalog/product.php
+CODE: extends Model {
+LINE: 23
+CODE: ps.date_start = '0000-00-00' OR ps.date_start < NOW())
+LINE: 29
+LINE: 82
+LINE: 232
+LINE: 553
+CODE: (ps.date_end = '0000-00-00' OR ps.date_end > NOW())
+LINE: 29
+LINE: 82
+LINE: 232
+LINE: 553
+
+FILE: system/library/cart/cart.php
+CODE: $product_special_query =
+LINE: 190
+CODE: $product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE
+LINE: 190
+
+FILE: admin/model/catalog/product.php
+CODE: foreach ($data['product_special'] as $product_special) {
+LINE: 67
+LINE: 218
+CODE: foreach ($data['product_special'] as $product_special) {
+LINE: 88
+LINE: 260
+CODE: $this->db->escape($product_special['date_start']) . "',
+LINE: 89
+LINE: 261
+
+FILE: admin/controller/catalog/product.php
+CODE: extends Controller {
+LINE: 23
+CODE: $this->language->get('entry_date_end');
+LINE: 704
+CODE: if (isset($this->request->post['product_image'])) {
+LINE: 1369
+CODE: $product_special['price'],
+LINE: 1331
+CODE: if (($product_special['date_start'] == '0000-00-00'
+LINE: 439
+CODE: strtotime($product_special['date_end']) > time())
+LINE: 439
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: html += '  <td class="text-left"><button type="button" onclick="$(\'#special-row' + special_row
+LINE: 1401
+CODE: $('#special tbody').append(html);
+LINE: 1412
+CODE: <td colspan="5">
+LINE: 840
+CODE: <td class="text-left"><button type="button" onclick="$('#special-row
+LINE: 862
+CODE: <?php echo $footer; ?>
+LINE: 1562
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_priority']
+LINE: 77
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['entry_priority']
+LINE: 77
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:18:30 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: Days and hours in specials
+
+FILE: catalog/model/catalog/product.php
+CODE: extends Model {
+LINE: 23
+CODE: ps.date_start = '0000-00-00' OR ps.date_start < NOW())
+LINE: 29
+LINE: 82
+LINE: 232
+LINE: 553
+CODE: (ps.date_end = '0000-00-00' OR ps.date_end > NOW())
+LINE: 29
+LINE: 82
+LINE: 232
+LINE: 553
+
+FILE: system/library/cart/cart.php
+CODE: $product_special_query =
+LINE: 190
+CODE: $product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE
+LINE: 190
+
+FILE: admin/model/catalog/product.php
+CODE: foreach ($data['product_special'] as $product_special) {
+LINE: 67
+LINE: 218
+CODE: foreach ($data['product_special'] as $product_special) {
+LINE: 88
+LINE: 260
+CODE: $this->db->escape($product_special['date_start']) . "',
+LINE: 89
+LINE: 261
+
+FILE: admin/controller/catalog/product.php
+CODE: extends Controller {
+LINE: 23
+CODE: $this->language->get('entry_date_end');
+LINE: 704
+CODE: if (isset($this->request->post['product_image'])) {
+LINE: 1369
+CODE: $product_special['price'],
+LINE: 1331
+CODE: if (($product_special['date_start'] == '0000-00-00'
+LINE: 439
+CODE: strtotime($product_special['date_end']) > time())
+LINE: 439
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: html += '  <td class="text-left"><button type="button" onclick="$(\'#special-row' + special_row
+LINE: 1401
+CODE: $('#special tbody').append(html);
+LINE: 1412
+CODE: <td colspan="5">
+LINE: 840
+CODE: <td class="text-left"><button type="button" onclick="$('#special-row
+LINE: 862
+CODE: <?php echo $footer; ?>
+LINE: 1562
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_priority']
+LINE: 77
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['entry_priority']
+LINE: 77
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:21:24 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:22:43 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: Bulk specials editor + the countdown timer
+
+FILE: catalog/model/catalog/product.php
+CODE: getProduct($product_id) {
+LINE: 29
+CODE: pd.name AS name, p.image,
+LINE: 30
+CODE: $query->row['date_modified'],
+LINE: 82
+
+FILE: catalog/controller/product/product.php
+CODE: if ((float)$product_info['special']) {
+LINE: 323
+
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <?php if ($price
+LINE: 178
+CODE: if ($price)
+LINE: 178
+CODE: <ul class="thumbnails">
+LINE: 33
+
+FILE: catalog/controller/product/category.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 253
+CODE: $data['header']
+LINE: 457
+LINE: 527
+
+FILE: catalog/controller/product/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 23
+CODE: $price,
+LINE: 161
+CODE: $data['header']
+LINE: 353
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 88
+CODE: $price,
+LINE: 263
+CODE: $data['header']
+LINE: 83
+LINE: 472
+LINE: 533
+
+FILE: catalog/controller/product/search.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 25
+CODE: $price,
+LINE: 276
+CODE: $data['header']
+LINE: 531
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 83
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/special.php
+CODE: public function index(
+LINE: 7
+CODE: $this->load->model('catalog/product');
+LINE: 31
+CODE: $price,
+LINE: 90
+CODE: $data['header']
+NOT FOUND - OPERATION SKIPPED!
+CODE: return $this->load->view(
+LINE: 119
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 109
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: return $this->load->view(
+LINE: 116
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template')
+NOT FOUND - OPERATIONS ABORTED!
+CODE: if ((float)$result['special']) {
+LINE: 223
+CODE: if ((float)$result['special']) {
+LINE: 131
+CODE: if ((float)$result['special']) {
+LINE: 251
+CODE: if ((float)$result['special']) {
+LINE: 246
+CODE: if ((float)$result['special']) {
+LINE: 53
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$result['special']) {
+LINE: 60
+CODE: if ((float)$product_info['special']) {
+LINE: 60
+CODE: if ($timer_exist) {
+LINE: 228
+CODE: if ($timer_exist) {
+LINE: 136
+CODE: if ($timer_exist) {
+LINE: 251
+CODE: if ($timer_exist) {
+LINE: 256
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 58
+CODE: if ($timer_exist) {
+LINE: 65
+CODE: if ($timer_exist) {
+LINE: 65
+
+FILE: catalog/view/theme/default/template/product/category.tpl
+CODE: <?php if ($product['price']
+LINE: 105
+
+FILE: catalog/view/theme/default/template/product/special.tpl
+CODE: <?php if ($product['price']
+LINE: 68
+
+FILE: catalog/view/theme/default/template/product/manufacturer_info.tpl
+CODE: <?php if ($product['price']
+LINE: 79
+
+FILE: catalog/view/theme/default/template/product/search.tpl
+CODE: <?php if ($product['price']
+LINE: 120
+
+FILE: catalog/view/theme/default/template/extension/module/featured.tpl
+CODE: <?php if ($product['price']
+LINE: 20
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.tpl
+CODE: <?php if ($product['price']
+LINE: 20
+
+FILE: catalog/view/theme/default/template/extension/module/latest.tpl
+CODE: <?php if ($product['price']
+LINE: 20
+
+FILE: catalog/view/theme/default/template/extension/module/special.tpl
+CODE: <?php if ($product['price']
+LINE: 20
+CODE: <?php echo $footer;
+LINE: 181
+CODE: <?php echo $footer;
+LINE: 143
+CODE: <?php echo $footer;
+LINE: 154
+CODE: <?php echo $footer;
+LINE: 239
+CODE: <?php foreach ($products
+LINE: 7
+CODE: <?php foreach ($products
+LINE: 7
+CODE: <?php foreach ($products
+LINE: 7
+CODE: <?php foreach ($products
+LINE: 7
+CODE: timer_<?php echo $product['product_id'];?>
+LINE: 35
+LINE: 40
+CODE: timer_<?php echo $product['product_id'];?>
+LINE: 35
+LINE: 40
+CODE: timer_<?php echo $product['product_id'];?>
+LINE: 35
+LINE: 40
+CODE: timer_<?php echo $product['product_id'];?>
+LINE: 35
+LINE: 40
+
+FILE: admin/model/catalog/product.php
+CODE: as $product_special) {
+LINE: 72
+LINE: 228
+CODE: date_start = '" . $this->db->escape($product_special['date_start']) . "',
+LINE: 73
+LINE: 229
+CODE: $sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+LINE: 402
+LINE: 686
+CODE: $sql .= " AND p.model LIKE '" . $this->db->escape($data['filter_model']) . "%'";
+LINE: 406
+LINE: 690
+
+FILE: admin/controller/catalog/product.php
+CODE: function getForm() {
+LINE: 608
+CODE: $this->language->get('entry_customer_group');
+LINE: 696
+CODE: $product_special['price'],
+LINE: 1320
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <td colspan="5">
+LINE: 840
+CODE: <td class="text-right"><input type="text" name="product_special[<?php echo $special_row; ?>][priority]
+LINE: 839
+CODE: <td class="text-left"><button type="button" onclick="$('#special-row
+LINE: 863
+CODE: html += '  <td class="text-right"><input type="text" name="product_special[' + special_row + '][priority]
+LINE: 1430
+CODE: html += '  <td class="text-left"><button type="button" onclick="$(\'#special-row' + special_row + '\').remove();
+LINE: 1441
+CODE: <?php echo $footer; ?>
+LINE: 1525
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+
+FILE: admin/language/ru-ru/catalog/product.php
+CODE: $_['entry_customer_group']
+LINE: 71
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:23:19 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+2023-03-06 18:33:01 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 567
+LINE: 942
+CODE: public function history() {
+LINE: 1545
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 205
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: likeDev - wishlist without login
+
+FILE: catalog/controller/account/wishlist.php
+CODE: 'remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])
+LINE: 111
+CODE: if (!$this->customer->isLogged()) {
+LINE: 3
+CODE: if (isset($this->request->get['remove'])) {
+LINE: 34
+CODE: $results = $this->model_account_wishlist->getWishlist();
+LINE: 87
+CODE: $this->session->data['wishlist'][] = $this->request->post['product_id'];
+LINE: 208
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 214
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+LINE: 212
+CODE: $json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 57
+
+FILE: catalog/controller/account/login.php
+CODE: $this->load->model('account/customer');
+LINE: 22
+
+FILE: catalog/controller/account/register.php
+CODE: if ($this->customer->isLogged()) {
+LINE: 23
+----------------------------------------------------------------
+MOD: Автоматичні рекомендовані
+
+FILE: catalog/controller/product/product.php
+CODE: $results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
+LINE: 417
+
+FILE: catalog/model/catalog/product.php
+CODE: getProductRelated($product_id)
+LINE: 388
+CODE: $product_data[$result['related_id']] = $this->getProduct($result['related_id']);
+LINE: 394
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_related pr LEFT JOIN " . DB_PREFIX . "product p ON (pr.related_id = p.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pr.product_id = '" . (int)$product_id . "' AND p.status = '1' AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");
+LINE: 391
+----------------------------------------------------------------

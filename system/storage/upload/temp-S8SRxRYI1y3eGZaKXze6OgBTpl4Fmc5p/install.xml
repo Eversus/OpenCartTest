@@ -1,0 +1,157 @@
+<modification>
+    <name>likeDev - wishlist without login</name>
+    <code>likedev_wishlist_without_login</code>
+    <version>1.2.3</version>
+    <author>Seriusis</author>
+    <link>https://likeDev.pro</link>
+
+    <file path="catalog/controller/account/wishlist.php">
+
+        <operation>
+            <search><![CDATA['remove'     => $this->url->link('account/wishlist', 'remove=' . $product_info['product_id'])]]></search>
+            <add position="replace"><![CDATA['remove'     => $this->customer->isLogged() ? $this->url->link('account/wishlist', 'remove=' . $product_info['product_id']) : $this->url->link('account/wishlist', 'remove_cookie_wishlist=' . $product_info['product_id'])]]></add>
+        </operation>
+
+
+        <operation>
+            <search><![CDATA[
+      if (!$this->customer->isLogged()) {]]></search>
+            <add position="replace" offset="4"><![CDATA[]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA[
+                if (isset($this->request->get['remove'])) {]]></search>
+            <add position="before"><![CDATA[
+
+               //remove product from wishlist by guest
+            if (isset($this->request->get['remove_cookie_wishlist'])) {
+
+		    $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+		    $wishlist = array_unique($wishlist);
+		    foreach ($wishlist as $k => $value){
+		        if($value == $this->request->get['remove_cookie_wishlist']){
+		            unset($wishlist[$k]);
+                }
+            }
+                setcookie('cookieWishlist', json_encode($wishlist), time()+3600*24*365,'/');
+
+                $this->response->redirect($this->url->link('account/wishlist'));
+            }
+            /*end remove product from wishlist by guest*/
+
+
+
+            ]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA[$results = $this->model_account_wishlist->getWishlist();]]></search>
+            <add position="replace"><![CDATA[
+            if ($this->customer->isLogged()) {
+                $results = $this->model_account_wishlist->getWishlist();
+                }else{
+                 $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+                 $wishlist = array_unique($wishlist);
+                    $results = [];
+                    foreach ($wishlist as $value){
+                        $results[]['product_id'] = $value;
+                    }
+            }
+            ]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA[$this->session->data['wishlist'][] = $this->request->post['product_id'];]]></search>
+            <add position="after"><![CDATA[
+                 /*add product in wishlist by guest*/
+                $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+                $wishlist = array_unique($wishlist);
+                $wishlist_total = count($wishlist);
+                  if(!in_array($this->request->post['product_id'], $wishlist)){
+                    $this->load->model('catalog/product');
+                    $product_info = $this->model_catalog_product->getProduct($this->request->post['product_id']);
+                    if($product_info){
+                     $wishlist[] = $this->request->post['product_id'];
+                        $wishlist_total += 1;
+                     }
+                }
+
+                 setcookie('cookieWishlist', json_encode($wishlist), time()+3600*24*365, '/');
+
+                $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+                $wishlist = array_unique($wishlist);
+                /*end add product in wishlist by guest*/
+            ]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA[$json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));]]></search>
+            <add position="replace"><![CDATA[
+            $json['total'] = sprintf($this->language->get('text_wishlist'), $wishlist_total);
+            ]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA[$json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', true), $this->url->link('account/register', '', true), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));]]></search>
+            <add position="replace"><![CDATA[$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));]]></add>
+        </operation>
+        <operation><!--oc2.1-->
+            <search><![CDATA[$json['success'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));]]></search>
+            <add position="replace"><![CDATA[$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . (int)$this->request->post['product_id']), $product_info['name'], $this->url->link('account/wishlist'));]]></add>
+        </operation>
+    </file>
+    <file path="catalog/controller/common/header.php">
+        <operation>
+        <search><![CDATA[$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));]]></search>
+        <add position="replace"><![CDATA[
+      $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+      $wishlist = array_unique($wishlist);
+        $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), count($wishlist));
+        ]]></add>
+        </operation>
+    </file>
+    
+    <!--fix wishlist saving after login-->
+    <file path="catalog/controller/account/login.php">
+          <operation>
+            <search index="0"><![CDATA[$this->load->model('account/customer');]]></search>
+            <add position="after"><![CDATA[
+             $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+            $wishlist = array_unique($wishlist);
+                  if ($wishlist) {
+                    $this->load->model('account/wishlist');
+                    $this->load->model('catalog/product');
+
+                    foreach ($wishlist as $id) {
+                        $product_info = $this->model_catalog_product->getProduct($id);
+                        if ($product_info) {
+                            $this->model_account_wishlist->addWishlist($id);
+                        }
+                    }
+
+                    setcookie('cookieWishlist', '', time()-3600*24*365,'/');
+                }
+            ]]></add>
+        </operation>
+    </file>
+      <file path="catalog/controller/account/register.php">
+          <operation>
+            <search index="0"><![CDATA[if ($this->customer->isLogged()) {]]></search>
+            <add position="after"><![CDATA[
+            $wishlist = isset($_COOKIE['cookieWishlist']) ? json_decode($_COOKIE['cookieWishlist'],1) : [];
+            $wishlist = array_unique($wishlist);
+                if ($wishlist) {
+                    $this->load->model('account/wishlist');
+                    $this->load->model('catalog/product');
+    
+                    foreach ($wishlist as $id) {
+                        $product_info = $this->model_catalog_product->getProduct($id);
+                        if ($product_info) {
+                            $this->model_account_wishlist->addWishlist($id);
+                        }
+                    }
+
+                    setcookie('cookieWishlist', '', time()-3600*24*365,'/');
+                }
+            
+            ]]></add>
+        </operation>
+    </file>
+    
+</modification>
